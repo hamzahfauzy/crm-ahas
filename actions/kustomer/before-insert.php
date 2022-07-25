@@ -7,4 +7,9 @@ $user = $db->insert('users',[
     'password' => md5(12345678)
 ]);
 
+$db->insert('user_roles',[
+    'user_id' => $user->id,
+    'role_id' => 2,
+]);
+
 $_POST['kustomer']['user_id'] = $user->id;
