@@ -1,6 +1,6 @@
 <?php load_templates('layouts/top') ?>
     <div class="content">
-        <div class="panel-header bg-primary-gradient">
+        <div class="panel-header bg-danger-gradient">
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
@@ -40,7 +40,7 @@
                                     <input type="email" name="app[email]" class="form-control" value="<?=$data->email?>">
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary">Submit</button>
+                                    <button class="btn btn-danger">Submit</button>
                                 </div>
                             </form>
                         </div>

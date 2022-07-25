@@ -110,7 +110,7 @@
   }
 }
 
-.btn-primary {
+.btn-danger {
   background: $primary-color !important;
   border-color: $primary-color !important;
   &:hover, &:focus, &:disabled {
@@ -202,7 +202,7 @@
   &.btn-default {
     @include btn-border($dark-color);
   }
-  &.btn-primary {
+  &.btn-danger {
     @include btn-border($primary-color);
   }
   &.btn-secondary {
@@ -253,7 +253,7 @@
     @include btn-link($dark-color);
   }
 
-  &.btn-primary {
+  &.btn-danger {
     @include btn-link($primary-color);
   }
 

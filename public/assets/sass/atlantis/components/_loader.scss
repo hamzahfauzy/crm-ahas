@@ -100,7 +100,7 @@
 	}
 }
 
-.btn-primary, .card-primary {
+.btn-danger, .card-primary {
 	&.is-loading:after {
 		@extend %loader-btn-and-card-bgnotwhite;
 	}

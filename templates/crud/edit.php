@@ -1,6 +1,6 @@
 <?php load_templates('layouts/top') ?>
     <div class="content">
-        <div class="panel-header bg-primary-gradient">
+        <div class="panel-header bg-danger-gradient">
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
@@ -21,7 +21,7 @@
                             <?php if($error_msg): ?>
                             <div class="alert alert-danger"><?=$error_msg?></div>
                             <?php endif ?>
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <?php 
                                 foreach(config('fields')[$table] as $key => $field): 
                                     $label = $field;
@@ -33,16 +33,18 @@
                                         $label = $field_data['label'];
                                         if(isset($field_data['type']))
                                         $type  = $field_data['type'];
+
+                                        if($type == 'decimal') $type='number';
                                     }
                                     $label = _ucwords($label);
                                 ?>
-                                <div class="form-group">
+                                <div class="form-group <?= $type=='hidden'?'d-none':''?>">
                                     <label for=""><?=$label?></label>
                                     <?= Form::input($type, $table."[".$field."]", ['class'=>"form-control","placeholder"=>$label,"value"=>$old[$field]??$data->{$field}]) ?>
                                 </div>
                                 <?php endforeach ?>
                                 <div class="form-group">
-                                    <button class="btn btn-primary">Submit</button>
+                                    <button class="btn btn-danger">Submit</button>
                                 </div>
                             </form>
                         </div>
